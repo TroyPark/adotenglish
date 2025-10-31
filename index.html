@@ -600,7 +600,7 @@
                 <h2>🎯 1:1 맞춤 영어학원 | 성적이 오르는 에이닷</h2>
                 <p>우리학교 맞춤! 학생에 맞춤! 최적의 영어 학습법 💡</p>
             </div>
-            <a href="https://www.adotenglish.com/" target="_blank" class="banner-btn">알아보기</a>
+            <a href="https://www.adotenglish.com/" target="_blank" class="banner-btn" onclick="trackHomepageClick()">알아보기</a>
         </div>
     </div>
     
@@ -1078,6 +1078,14 @@
             scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
             document.getElementById('resultSection').style.display = 'none';
             document.getElementById('startSection').style.display = 'block';
+        }
+        
+        // 홈페이지 버튼 클릭 추적
+        function trackHomepageClick() {
+            // 네이버 애널리틱스 이벤트 전송
+            if (window.wcs && typeof wcs.event === 'function') {
+                wcs.event("(students)홈페이지유입", "유입횟수");
+            }
         }
     </script>
     
